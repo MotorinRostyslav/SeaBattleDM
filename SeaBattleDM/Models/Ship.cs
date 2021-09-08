@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Configuration;
-using System.Collections.Specialized;
 
 namespace SeaBattleDM.Models
 {
     public abstract class Ship
     {
-        const int MaxLengthShip = 15; //TODO: config
+        const int MaxLengthShip = 15;
         public int Length { get; }
         public int Speed { get; }
         abstract public string Type { get; }
