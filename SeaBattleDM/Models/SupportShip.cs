@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SeaBattleDM.Interfaces;
+﻿using SeaBattleDM.Interfaces;
 
 namespace SeaBattleDM.Models
 {
@@ -12,7 +7,6 @@ namespace SeaBattleDM.Models
         public override string Type { get; }
         public int RangeRepair { get; }
 
-
         public SupportShip(int Length, int RangeRepair, Direction direction, int Speed) : base(Length, direction, Speed)
         {
             Type = Types.supprotShip.ToString();
@@ -20,7 +14,7 @@ namespace SeaBattleDM.Models
         }
         public override string GetState()
         {
-            string result = "Ship has a \nType: " + Type + " \n Length: " + Length + "\n Speed:" + Speed + "\n Repair range: " + RangeRepair;
+            string result = "Ship has a: \n Type: " + Type + " \n Length: " + Length + "\n Speed:" + Speed + "\n Repair range: " + RangeRepair;
             return result;
         }
 

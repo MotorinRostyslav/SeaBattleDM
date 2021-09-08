@@ -15,7 +15,7 @@ namespace SeaBattleDM.Models
         }
         public override string GetState()
         {
-            string result = "Ship has a \nType: " + Type + " \n Length: " + Length + "\n Speed:" + Speed + "\n Fire range: "+ RangeFire;
+            string result = "Ship has a: \n Type: " + Type + " \n Length: " + Length + "\n Speed:" + Speed + "\n Fire range: "+ RangeFire;
             return result;
         }
 
