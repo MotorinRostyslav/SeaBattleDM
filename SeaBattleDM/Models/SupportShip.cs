@@ -2,7 +2,7 @@
 
 namespace SeaBattleDM.Models
 {
-    class SupportShip : Ship, IRepair
+    public class SupportShip : Ship, IRepair
     {
         public override string Type { get; }
         public int RangeRepair { get; }

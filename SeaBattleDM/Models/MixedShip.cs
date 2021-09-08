@@ -2,7 +2,7 @@
 
 namespace SeaBattleDM.Models
 {
-    class MixedShip : Ship, IRepair, IGun
+    public class MixedShip : Ship, IRepair, IGun
     {
         public override string Type { get; }
         public int RangeFire { get; }
