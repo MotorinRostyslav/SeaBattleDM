@@ -9,7 +9,7 @@ namespace SeaBattleDM.Interfaces
 {
     interface IGun
     {
-        public int rangeFire { get; set; }
+        public int RangeFire { get; }
         public void Fire(Point point);
     }
 }
