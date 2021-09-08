@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SeaBattleDM.Models
 {
-    class Quadrant
+    public class Quadrant
     {
         public int QuadrantId { get;}
         public Quadrant(int QuadrantId)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SeaBattleDM.Interfaces
 {
-    interface IGun
+    public interface IGun
     {
         public int RangeFire { get; }
         public void Fire(Point point);

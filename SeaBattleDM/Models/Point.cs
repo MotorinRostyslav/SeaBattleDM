@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SeaBattleDM.Models
 {
-    struct Point
+    public struct Point
     {
         public readonly int X { get; }
         public readonly int Y { get; }

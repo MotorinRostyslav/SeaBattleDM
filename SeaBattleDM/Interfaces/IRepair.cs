@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SeaBattleDM.Interfaces
 {
-    interface IRepair
+    public interface IRepair
     {
         public int RangeRepair { get; }
         public void Repairs(Point point);
