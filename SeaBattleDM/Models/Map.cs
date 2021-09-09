@@ -19,7 +19,7 @@ namespace SeaBattleDM.Models
         }
         public void AddShip(Ship ship, Point[] position)
         {
-            if(PositionService.CheckPosition(position) == false)
+            if(PositionService.CheckFreePosition(position) == true)
             {
                 int QuadrantId = FindQuadrantService.FindQuadrant(position);
                 WrapperShip wrapperShip = new WrapperShip(ship, position, QuadrantId);
@@ -39,13 +39,15 @@ namespace SeaBattleDM.Models
             Ships.Add(templateShip.ShipsSort());
 
             result += "Map`s state include a: \n Size: " + MaxSizeMap + "\n Bottom left and top right points: "
-                + Points[0][0].X+":"+ Points[0][0].Y + " , " + Points[MaxSizeMap-1][MaxSizeMap-1].X +":"+ Points[MaxSizeMap - 1][MaxSizeMap - 1].Y ;
+                + Points[0][0].X+":"+ Points[0][0].Y + " , " + Points[MaxSizeMap-1][MaxSizeMap-1].X +":"+ Points[MaxSizeMap - 1][MaxSizeMap - 1].Y;
+
             for (int i = 0; i < Ships.wrapperShips.Count; i++)
             {
                 result += "\nHave a next ship [ "+ "Ship type: "+Ships.wrapperShips[i].Ship.Type
                     + " Ship length: " + Ships.wrapperShips[i].Ship.Length + " Ship speed: " + Ships.wrapperShips[i].Ship.Length
                     +" Ship`s quadrant: "+ Ships.wrapperShips[i].QuadrantId + " ]";
             }
+
             return result;
         }
         private void FillingMap()

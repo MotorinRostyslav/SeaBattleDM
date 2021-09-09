@@ -10,7 +10,6 @@ namespace SeaBattleDM.Models
         {
             wrapperShips.Add(ship);
         }
-        
         public void Add(List<WrapperShip> ships)
         {
             foreach (var i in ships)

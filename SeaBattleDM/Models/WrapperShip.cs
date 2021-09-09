@@ -23,29 +23,29 @@ namespace SeaBattleDM.Models
             var position1 = first.Position;
             var position2 = second.Position;
 
-            double length1 = MathLength(position1);
-            double length2 = MathLength(position2);
+            double length1 = CalculateLength(position1);
+            double length2 = CalculateLength(position2);
 
             if (length1 > length2) return 1;
             if (length1 < length2) return -1;
             return 0;
         }
-        private double MathLength(Point[] position)
+        private double CalculateLength(Point[] position)
         {
             Point zeroPoint = new Point(0, 0);
-            double midX = 0;
-            double midY = 0;
+            double averageX = 0;
+            double averageY = 0;
 
-            foreach (var i in position)
+            foreach (var point in position)
             {
-                midX += i.X;
-                midY += i.Y;
+                averageX += point.X;
+                averageY += point.Y;
             }
 
-            midX = midX / position.Length;
-            midY = midY / position.Length;
+            averageX = averageX / position.Length;
+            averageY = averageY / position.Length;
 
-            return Math.Sqrt(Math.Pow(zeroPoint.X - midX, 2) + Math.Pow(zeroPoint.Y - midY, 2));
+            return Math.Sqrt(Math.Pow(zeroPoint.X - averageX, 2) + Math.Pow(zeroPoint.Y - averageY, 2));
         }
     }
 }
