@@ -5,13 +5,24 @@ namespace SeaBattleDM.Models
 {
     public class CollectionShips
     {
-
         public List<WrapperShip> wrapperShips = new List<WrapperShip>();
         public void Add(WrapperShip ship)
         {
             wrapperShips.Add(ship);
         }
-
+        
+        public void Add(List<WrapperShip> ships)
+        {
+            foreach (var i in ships)
+            {
+                wrapperShips.Add(i);
+            }
+        }
+        public List<WrapperShip> ShipsSort()
+        {
+            wrapperShips.Sort(new WrapperShipComparer());
+            return wrapperShips;
+        }
         public WrapperShip this[int quadrantId, int X, int Y]
         {
             get
